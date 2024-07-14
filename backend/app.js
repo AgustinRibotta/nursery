@@ -14,7 +14,7 @@ const port = process.env.APP_PORT;
 app.use(bodyParser.json());
 
 // Use user routes
-app.use("/api", userRoutes);
+app.use("/api/user", userRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

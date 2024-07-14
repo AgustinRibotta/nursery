@@ -1,10 +1,10 @@
 -- User
 CREATE TABLE if NOT EXISTS userAdmin (
     id SERIAL PRIMARY KEY,
-    fname VARCHAR(50),
-    lname VARCHAR(50),
-    email TEXT,
-    password TEXT
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    email TEXT UNIQUE,
+    password TEXT NOT NULL
 );
 
 -- Us
