@@ -72,7 +72,8 @@ User.update = async (userId, userData) => {
 User.list = async () => {
   const query = `
       SELECT *
-      FROM useradmin`;
+      FROM useradmin
+      RETURNING id, fname, lname, email`;
 
   try {
     const result = await pool.query(query);

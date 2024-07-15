@@ -12,7 +12,7 @@ async function createTables() {
   } catch (err) {
     console.error("Error creating tables:", err);
   } finally {
-    await pool.end(); // Cierra la conexión de la base de datos
+    await pool.end();
   }
 }
 
