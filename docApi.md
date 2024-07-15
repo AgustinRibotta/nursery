@@ -2,12 +2,12 @@
 
 ## User
 
-- **URL:** `http://localhost:3000/api/user`
+- **URL:** ```http://localhost:3000/api/user```
 
 ### New
 
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/user/create`
+- **URL:** ```http://localhost:3000/api/user/create```
 - **Headers:** None
 - **Body:**
 
@@ -40,7 +40,7 @@
 ### Login
 
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/user/login`
+- **URL:** ```http://localhost:3000/api/user/login```
 - **Headers:** None
 - **Body:**
 
@@ -73,7 +73,7 @@
 ### Update
 
 - **Method:** PATCH
-- **URL:** `http://localhost:3000/api/user/update/3`
+- **URL:** ```http://localhost:3000/api/user/update/3```
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Body:**
@@ -107,7 +107,7 @@
 ### List
 
 - **Method:** GET
-- **URL:** `http://localhost:3000/api/user/list`
+- **URL:** ```http://localhost:3000/api/user/list```
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Responses:**
@@ -144,7 +144,7 @@
 ### Logout
 
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/user/logout`
+- **URL:** ```http://localhost:3000/api/user/logout```
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Description:** Every time you close the session the token will be deleted and you will have to log in again
@@ -161,12 +161,12 @@
 
 ## About Us
 
-- **URL:** `http://localhost:3000/api/about-us`
+- **URL:** ```http://localhost:3000/api/about-us```
 
 ### Create
 
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/about-us/create`
+- **URL:** ```http://localhost:3000/api/about-us/create```
 - **Headers:** None
 - **Body:**
 
@@ -198,7 +198,7 @@
 ### Update
 
 - **Method:** PATCH
-- **URL:** `http://localhost:3000/api/about-us/update?id=5`
+- **URL:** ```http://localhost:3000/api/about-us/update?id=5```
 - **Headers:** None
 - **Body:**
 
