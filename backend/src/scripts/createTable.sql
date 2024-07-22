@@ -12,7 +12,8 @@ CREATE TABLE if NOT EXISTS us (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     text TEXT NOT NULL,
-    image TEXT
+    image TEXT,
+    active BOOLEAN
 );
 
 -- Season

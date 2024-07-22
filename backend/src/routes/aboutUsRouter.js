@@ -19,4 +19,6 @@ router.patch(
   aboutUsController.update
 );
 
+router.get("/active", aboutUsController.listActive);
+
 export default router;

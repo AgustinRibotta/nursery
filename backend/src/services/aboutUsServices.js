@@ -18,4 +18,13 @@ aboutUsServices.update = async (aboutUsId, aboutUs) => {
   }
 };
 
+aboutUsServices.listActive = async () => {
+  try {
+    const listActive = await AboutUs.active();
+    return listActive;
+  } catch (error) {
+    console.error("Error in aboutUsServices List Active ");
+  }
+};
+
 export default aboutUsServices;

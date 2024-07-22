@@ -3,10 +3,15 @@ import aboutUsServices from "../services/aboutUsServices.js";
 const aboutUsController = {};
 
 aboutUsController.create = async (req, res) => {
-  const { title, text } = req.body;
+  const { title, text, active } = req.body;
   const image = req.file ? req.file.filename : null;
   try {
-    const newAboutUs = await aboutUsServices.create({ title, text, image });
+    const newAboutUs = await aboutUsServices.create({
+      title,
+      text,
+      image,
+      active,
+    });
     res.status(201).json({
       message: "About Us created successfully",
       status: "success",
@@ -22,7 +27,7 @@ aboutUsController.create = async (req, res) => {
 };
 
 aboutUsController.update = async (req, res) => {
-  const { title, text } = req.body;
+  const { title, text, active } = req.body;
   const aboutUsId = req.params.id;
   const image = req.file ? req.file.filename : null;
 
@@ -31,6 +36,7 @@ aboutUsController.update = async (req, res) => {
       title,
       text,
       image,
+      active,
     });
     res.status(200).json({
       message: "About Us update successfully",
@@ -44,6 +50,17 @@ aboutUsController.update = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+aboutUsController.listActive = async (req, res) => {
+  try {
+    const listActiveAboutUs = await aboutUsServices.listActive();
+    res.status(200).json({
+      message: "About Us List Active successfully",
+      status: "success",
+      data: listActiveAboutUs,
+    });
+  } catch (error) {}
 };
 
 export default aboutUsController;
