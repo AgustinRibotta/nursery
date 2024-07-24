@@ -61,7 +61,7 @@
       "message": "Login successful",
       "status": "success",
       "user": {
-        "id": 7,
+        "id": 1,
         "email": "example@example.com",
         "fname": "example",
         "lname": "example"
@@ -96,7 +96,7 @@
       "message": "User updated successfully",
       "status": "success",
       "user": {
-        "id": 7,
+        "id": 1,
         "email": "example.new@example.com",
         "fname": "example",
         "lname": "example"
@@ -120,19 +120,19 @@
       "status": "success",
       "user": [
         {
-          "id": 5,
-          "fname": "Alice",
-          "lname": "Johnson",
-          "email": "aliace.johnson@example.com"
-        },
+          "id": 1,
+          "fname": "example",
+          "lname": "example",
+          "email": "example.new@example.com"
+        }
         {
-          "id": 6,
-          "fname": "Alice",
-          "lname": "Johnson",
-          "email": "aliceasd.johnson@example.com"
-        },
+          "id": 2,
+          "fname": "example",
+          "lname": "example",
+          "email": "example.new@example.com"
+        }
         {
-          "id": 7,
+          "id": 3,
           "fname": "example",
           "lname": "example",
           "email": "example.new@example.com"
@@ -167,7 +167,8 @@
 
 - **Method:** POST
 - **URL:** `http://localhost:3000/api/about-us/create`
-- **Headers:** None
+- **Headers:**
+  - **Authorization:** Bearer Token
 - **Body:**
 
   ```json
@@ -187,7 +188,7 @@
       "message": "About Us created successfully",
       "status": "success",
       "data": {
-        "id": 4,
+        "id": 1,
         "title": "example",
         "text": "example",
         "image": "1720977005536.jpg"
@@ -199,7 +200,8 @@
 
 - **Method:** PATCH
 - **URL:** `http://localhost:3000/api/about-us/update?id=5`
-- **Headers:** None
+- **Headers:**
+  - **Authorization:** Bearer Token
 - **Body:**
 
   ```json
@@ -217,6 +219,49 @@
     ```json
     {
       "message": "About Us created successfully",
+      "status": "success"
+    }
+    ```
+
+### List
+
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/about-us/active`
+- **Headers:**
+  - **Authorization:** Bearer Token
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "About Us List Active successfully",
+      "status": "success",
+      "data": [
+        {
+          "id": 1,
+          "title": "example2",
+          "text": "example2",
+          "image": null,
+          "active": true
+        }
+      ]
+    }
+    ```
+
+### Delete
+
+- **Method:** DELETE
+- **URL:** `http://localhost:3000/api/about-us/active`
+- **Headers:**
+  - **Authorization:** Bearer Token
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "About Us deleted successfully",
       "status": "success"
     }
     ```

@@ -13,12 +13,22 @@ router.post(
 );
 
 router.patch(
-  "/update",
+  "/update/:id",
   // requireAuth,
   upload.single("image"),
   aboutUsController.update
 );
 
-router.get("/active", aboutUsController.listActive);
+router.get(
+  "/active",
+  // requireAuth,
+  aboutUsController.listActive
+);
+
+router.delete(
+  "/delete/:id",
+  // requireAuth,
+  aboutUsController.delete
+);
 
 export default router;

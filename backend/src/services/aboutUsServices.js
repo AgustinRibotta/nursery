@@ -4,26 +4,52 @@ const aboutUsServices = {};
 
 // Create
 aboutUsServices.create = async (aboutUs) => {
-  const newAboutUs = await AboutUs.create(aboutUs);
-  return newAboutUs;
+  try {
+    const result = await AboutUs.create(aboutUs);
+    return result;
+  } catch (error) {
+    console.error("Error in aboutUsServices.create:", error.message);
+    throw new Error(`Error in aboutUsServices.create: ${error.message}`);
+  }
 };
 
 aboutUsServices.update = async (aboutUsId, aboutUs) => {
   try {
-    const updateAboutUs = await AboutUs.update(aboutUsId, aboutUs);
-    return updateAboutUs;
+    const result = await AboutUs.update(aboutUsId, aboutUs);
+    return result;
   } catch (error) {
-    console.error("Error in aboutUsServices update:", error);
-    throw error;
+    console.error(
+      `Error in aboutUsServices.update for id ${aboutUsId}:`,
+      error.message
+    );
+    throw new Error(
+      `Error in aboutUsServices.update for id ${aboutUsId}: ${error.message}`
+    );
   }
 };
 
 aboutUsServices.listActive = async () => {
   try {
-    const listActive = await AboutUs.active();
-    return listActive;
+    const result = await AboutUs.active();
+    return result;
   } catch (error) {
-    console.error("Error in aboutUsServices List Active ");
+    console.error("Error in aboutUsServices.listActive:", error.message);
+    throw new Error(`Error in aboutUsServices.listActive: ${error.message}`);
+  }
+};
+
+aboutUsServices.delete = async (aboutUsId) => {
+  try {
+    const result = await AboutUs.delete(aboutUsId);
+    return result;
+  } catch (error) {
+    console.error(
+      `Error in aboutUsServices.delete for id ${aboutUsId}:`,
+      error.message
+    );
+    throw new Error(
+      `Error in aboutUsServices.delete for id ${aboutUsId}: ${error.message}`
+    );
   }
 };
 
