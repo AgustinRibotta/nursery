@@ -7,7 +7,7 @@
 ### New
 
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/user/create`
+- **URL:** `http://localhost:3000/api/user/`
 - **Headers:** None
 - **Body:**
 
@@ -73,7 +73,7 @@
 ### Update
 
 - **Method:** PATCH
-- **URL:** `http://localhost:3000/api/user/update/3`
+- **URL:** `http://localhost:3000/api/user/3`
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Body:**
@@ -107,7 +107,7 @@
 ### List
 
 - **Method:** GET
-- **URL:** `http://localhost:3000/api/user/list`
+- **URL:** `http://localhost:3000/api/user/`
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Responses:**
@@ -165,8 +165,10 @@
 
 ### Create
 
+- **Description:** Keep in mind that when creating a new "about us" you can only have one active
+
 - **Method:** POST
-- **URL:** `http://localhost:3000/api/about-us/create`
+- **URL:** `http://localhost:3000/api/about-us/`
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Body:**
@@ -175,7 +177,8 @@
   {
     "title": "",
     "text": "",
-    "iamge": ""
+    "iamge": "",
+    "active":
   }
   ```
 
@@ -191,7 +194,8 @@
         "id": 1,
         "title": "example",
         "text": "example",
-        "image": "1720977005536.jpg"
+        "image": "1720977005536.jpg",
+        "active": true
       }
     }
     ```
@@ -199,7 +203,7 @@
 ### Update
 
 - **Method:** PATCH
-- **URL:** `http://localhost:3000/api/about-us/update?id=5`
+- **URL:** `http://localhost:3000/api/about-us/id`
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Body:**
@@ -208,7 +212,8 @@
   {
     "title": "",
     "text": "",
-    "iamge": ""
+    "iamge": "",
+    "active": ""
   }
   ```
 
@@ -252,7 +257,7 @@
 ### Delete
 
 - **Method:** DELETE
-- **URL:** `http://localhost:3000/api/about-us/active`
+- **URL:** `http://localhost:3000/api/about-us/`
 - **Headers:**
   - **Authorization:** Bearer Token
 - **Responses:**

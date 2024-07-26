@@ -5,10 +5,15 @@ import requireAuth from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 // Route to create a new user
-router.post("/create", userController.create);
+// Create
+router.post("/", userController.create);
+// Login
 router.post("/login", userController.login);
-router.patch("/update/:id", requireAuth, userController.update);
+// Update
+router.patch("/:id", requireAuth, userController.update);
+// Logout
 router.post("/logout", requireAuth, userController.logout);
-router.get("/list", requireAuth, userController.list);
+// List
+router.get("/", requireAuth, userController.list);
 
 export default router;

@@ -13,13 +13,14 @@ CREATE TABLE if NOT EXISTS us (
     title VARCHAR(100) NOT NULL,
     text TEXT NOT NULL,
     image TEXT,
-    active BOOLEAN
+    active BOOLEAN DEFAULT false
 );
 
 -- Season
 CREATE TABLE if NOT EXISTS season (
     id SERIAL PRIMARY KEY,
-    title TEXT NOT NULL
+    title TEXT NOT NULL,
+    active BOOLEAN DEFAULT false
 );
 
 -- Plant
