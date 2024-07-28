@@ -1,4 +1,25 @@
-# RESTful API Basics #nursery
+# RESTful API Basics
+
+## Index
+
+- [User](#user)
+  - [New](#new) : Generate a new "User".
+  - [Login](#login) : Log in and generate a token for the "User".
+  - [Update](#update) : Update "User".
+  - [List](#list) : List the users that have been created.
+  - [Logout](#logout) : Log out and delete the corresponding token for the "User".
+- [About Us](#about-us)
+  - [Create](#create-1) : Create a new "About Us" section
+  - [Update](#update-1) : Update the "About Us" section
+  - [List Active](#list-active) : List the active "About Us" sections
+  - [Delete](#delete) : Delete the specified "About Us" section
+- [Season](#season)
+  - [List Active](#list-active-1) : List the active "Seasons".
+  - [Create](#create-2) : Create a new "Season".
+  - [Update](#update-2) : Update the "Season".
+  - [Delete](#delete-1) : Delete the "Season".
+
+---
 
 ## User
 
@@ -9,7 +30,7 @@
 - **Method:** POST
 - **URL:** `http://localhost:3000/api/user/`
 - **Headers:** None
-- **Body:**
+- **Body:** raw (json)
 
   ```json
   {
@@ -29,13 +50,15 @@
       "message": "User created successfully",
       "status": "success",
       "data": {
-        "id": 7,
+        "id": 1,
         "fname": "example",
         "lname": "example",
         "email": "example@example.com"
       }
     }
     ```
+
+[Back to Index](#index)
 
 ### Login
 
@@ -70,13 +93,23 @@
     }
     ```
 
+[Back to Index](#index)
+
 ### Update
 
 - **Method:** PATCH
 - **URL:** `http://localhost:3000/api/user/3`
 - **Headers:**
+
   - **Authorization:** Bearer Token
-- **Body:**
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Body:** raw (json)
 
   ```json
   {
@@ -91,25 +124,36 @@
 
   - **Example Response:**
 
-    ```json
-    {
-      "message": "User updated successfully",
-      "status": "success",
-      "user": {
-        "id": 1,
-        "email": "example.new@example.com",
-        "fname": "example",
-        "lname": "example"
-      }
-    }
-    ```
+        ```json
+        {
+          "message": "User updated successfully",
+          "status": "success",
+          "user": {
+            "id": 1,
+            "email": "example.new@example.com",
+            "fname": "example",
+            "lname": "example"
+          }
+        }
+        ```
+
+[Back to Index](#index)
 
 ### List
 
 - **Method:** GET
 - **URL:** `http://localhost:3000/api/user/`
 - **Headers:**
+
   - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Authorization:** Bearer Token
 - **Responses:**
 
   - **Example Response:**
@@ -121,32 +165,42 @@
       "user": [
         {
           "id": 1,
-          "fname": "example",
-          "lname": "example",
-          "email": "example.new@example.com"
-        }
+          "fname": "example1",
+          "lname": "example1",
+          "email": "example1.new@example.com"
+        },
         {
           "id": 2,
-          "fname": "example",
-          "lname": "example",
-          "email": "example.new@example.com"
-        }
+          "fname": "example2",
+          "lname": "example2",
+          "email": "example2.new@example.com"
+        },
         {
           "id": 3,
-          "fname": "example",
-          "lname": "example",
-          "email": "example.new@example.com"
+          "fname": "example3",
+          "lname": "example3",
+          "email": "example3.new@example.com"
         }
       ]
     }
     ```
+
+[Back to Index](#index)
 
 ### Logout
 
 - **Method:** POST
 - **URL:** `http://localhost:3000/api/user/logout`
 - **Headers:**
+
   - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
 - **Description:** Every time you close the session the token will be deleted and you will have to log in again
 - **Responses:**
 
@@ -159,6 +213,8 @@
     }
     ```
 
+---
+
 ## About Us
 
 - **URL:** `http://localhost:3000/api/about-us`
@@ -170,15 +226,23 @@
 - **Method:** POST
 - **URL:** `http://localhost:3000/api/about-us/`
 - **Headers:**
+
   - **Authorization:** Bearer Token
-- **Body:**
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Body:** form-data
 
   ```json
   {
     "title": "",
     "text": "",
     "iamge": "",
-    "active":
+    "active": ""
   }
   ```
 
@@ -186,27 +250,37 @@
 
   - **Example Response:**
 
-    ```json
-    {
-      "message": "About Us created successfully",
-      "status": "success",
-      "data": {
-        "id": 1,
-        "title": "example",
-        "text": "example",
-        "image": "1720977005536.jpg",
-        "active": true
-      }
-    }
-    ```
+        ```json
+        {
+          "message": "About Us created successfully",
+          "status": "success",
+          "data": {
+            "id": 1,
+            "title": "example",
+            "text": "example",
+            "image": "1720977005536.jpg",
+            "active": true
+          }
+        }
+        ```
+
+[Back to Index](#index)
 
 ### Update
 
 - **Method:** PATCH
 - **URL:** `http://localhost:3000/api/about-us/id`
 - **Headers:**
+
   - **Authorization:** Bearer Token
-- **Body:**
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Body:** form-data
 
   ```json
   {
@@ -228,12 +302,22 @@
     }
     ```
 
-### List
+[Back to Index](#index)
+
+### List Active
 
 - **Method:** GET
 - **URL:** `http://localhost:3000/api/about-us/active`
 - **Headers:**
+
   - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
 - **Responses:**
 
   - **Example Response:**
@@ -254,12 +338,22 @@
     }
     ```
 
+[Back to Index](#index)
+
 ### Delete
 
 - **Method:** DELETE
 - **URL:** `http://localhost:3000/api/about-us/`
 - **Headers:**
+
   - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
 - **Responses:**
 
   - **Example Response:**
@@ -270,3 +364,153 @@
       "status": "success"
     }
     ```
+
+---
+
+## Season
+
+- **URL:** `http://localhost:3000/api/season`
+
+### List Active
+
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/season/active`
+- **Headers:**
+
+  - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey"
+    }
+    ```
+
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "About Us List Active successfully",
+      "status": "success",
+      "data": [
+        {
+          "id": 3,
+          "title": "example2",
+          "text": "example2",
+          "active": true
+        }
+      ]
+    }
+    ```
+
+[Back to Index](#index)
+
+### Create
+
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/season/`
+- **Headers:**
+
+  - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Body:** raw (json)
+
+  ```json
+  {
+    "title": "",
+    "text": "",
+    "active": ""
+  }
+  ```
+
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "Seosn List Active successfully",
+      "status": "success",
+      "data": [
+        {
+          "id": 1,
+          "title": "example",
+          "text": "example",
+          "active": true
+        }
+      ]
+    }
+    ```
+
+[Back to Index](#index)
+
+### Update
+
+- **Method:** PATCH
+- **URL:** `http://localhost:3000/api/season/id`
+- **Headers:**
+
+  - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Body:** raw (json)
+
+  ```json
+  {
+    "title": "",
+    "text": "",
+    "active": ""
+  }
+  ```
+
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "Season update successfully",
+      "status": "success"
+    }
+    ```
+
+[Back to Index](#index)
+
+### Delete
+
+- **Method:** DELETE
+- **URL:** `http://localhost:3000/api/season/id`
+- **Headers:**
+
+  - **Authorization:** Bearer Token
+
+    ```json
+    {
+      "Authorization": "Bearer Token"
+    }
+    ```
+
+- **Responses:**
+
+  - **Example Response:**
+
+    ```json
+    {
+      "message": "Season deleted successfully",
+      "status": "success"
+    }
+    ```
+
+[Back to Index](#index)
