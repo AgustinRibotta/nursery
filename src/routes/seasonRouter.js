@@ -19,6 +19,7 @@ router.patch(
   seasonController.update
 );
 
+// The active Season is ready with its respective plants
 router.get(
   "/active",
   // requireAuth,

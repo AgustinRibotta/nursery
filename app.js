@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRoutes from "./src/routes/userRouter.js";
 import aboutUsRouter from "./src/routes/aboutUsRouter.js";
 import seasonRouter from "./src/routes/seasonRouter.js";
+import plantRouter from "./src/routes/plantRouter.js";
 
 // Env
 dotenv.config();
@@ -18,10 +19,15 @@ app.use("/uploads", express.static("uploads"));
 
 // Use user routes
 app.use("/api/user", userRoutes);
+
 // About Us Router
 app.use("/api/about-us", aboutUsRouter);
+
 // Season Router
 app.use("/api/season", seasonRouter);
+
+//  Plant Router
+app.use("/api/plant", plantRouter);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
