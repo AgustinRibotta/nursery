@@ -1,3 +1,68 @@
+## 1. Descargar Repo
+
+## 2. Dentro del proyecto (Instala dependecias)
+
+```bash
+  npm i
+```
+
+## 3. Instalar Postgres
+
+- Ingresar a Postgres
+
+```powershell
+
+psql postgres
+
+```
+
+- Cuando estes dentro :
+
+```sql
+
+CREATE USER nombre_usuario WITH PASSWORD 'contraseña';
+
+ALTER USER nombre_usuario CREATEDB;
+
+ALTER USER nombre_usuario CREATEROLE;
+
+```
+
+- Crear Base de Datos
+
+```sql
+
+CREATE DATABASE mi_nueva_db ;
+
+GRANT ALL PRIVILEGES ON DATABASE mi_nueva_db TO usuario_ejemplo;
+
+ALTER DATABASE nombre_base_datos OWNER TO nuevo_usuario;
+
+\q
+
+```
+
+## 4 Generamos y completamos archivo .env
+
+Lo creamos a la altura de la carpeta src creamos un archivo .env
+
+```json
+  DB_USER='nombre_usuario'
+  DB_HOST='localhost'
+  DB_NAME='mi_nueva_db'
+  DB_PASSWORD='contraseña'
+  DB_PORT='5432'
+  APP_PORT=3000
+```
+
+## 5 Iniciar el Servidor
+
+```bash
+  npm start
+
+  npx nodemon app.js
+```
+
 # RESTful API Basics
 
 ## Index
