@@ -16,25 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenBlacklistView,
-)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     # Apps
-    path("api/", include("apps.categori.urls")),
-    path("api/", include("apps.home.urls")),
-    path("api/", include("apps.plant.urls")),
-    path("api/", include("apps.promotion.urls")),
-    path("api/", include("apps.users.urls")),
-    path('api-auth/', include('rest_framework.urls')),
-    # Endpoints de JWT
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/token/blaclist/', TokenBlacklistView.as_view(), name='token_black_list'),
+    path("api/v1/", include("apps.categori.urls")),
+    path("api/v1/", include("apps.home.urls")),
+    path("api/v1/", include("apps.plant.urls")),
+    path("api/v1/", include("apps.promotion.urls")),
+
     # Endpoints de Djoser
     path('api/v1/', include('djoser.urls')),
+    path('api/v1/', include('djoser.urls.jwt')),
+    path('api/v1/', include('djoser.urls.authtoken')),
 ]
