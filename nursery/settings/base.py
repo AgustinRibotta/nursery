@@ -34,11 +34,12 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
 ]
 
 LOCAL_APPS = [
     'apps.nursery',
-    'apps.categori',
+    'apps.category',
     'apps.home',
     'apps.plant',
     'apps.promotion',
@@ -48,7 +49,6 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
-    'django_filters',
     'djoser',
 ]
 

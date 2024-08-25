@@ -3,7 +3,7 @@ from django.db import models
 
 from ..nursery.models import Nursery
 from ..plant.models import Plant
-from ..categori.models import CategoryPlant
+from ..category.models import CategoryPlant
 
 
 # Event

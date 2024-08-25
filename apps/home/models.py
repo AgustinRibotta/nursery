@@ -11,8 +11,8 @@ class SocialNetwork(models.Model):
     nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = _("SocialNetwork")
-        verbose_name_plural = _("SocialNetworks")
+        verbose_name = _("Social Network")
+        verbose_name_plural = _("Social Networks")
 
     def __str__(self):
         return self.name

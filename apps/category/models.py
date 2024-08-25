@@ -3,6 +3,7 @@ from django.db import models
 
 from ..plant.models import Plant
 from ..nursery.models import Nursery
+
 # Category
 class Category(models.Model):
     name = models.CharField(_("Name"), max_length=150)
@@ -18,9 +19,9 @@ class Category(models.Model):
 
 # Category Plant
 class CategoryPlant(models.Model):
-    category_id = models.ForeignKey(Category, verbose_name=_("Category"), on_delete=models.CASCADE)
-    plant_id = models.ForeignKey(Plant, verbose_name=_("Plant"), on_delete=models.CASCADE)
-    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE)
+    category_id = models.ForeignKey(Category, verbose_name=_("Categoryes"), on_delete=models.CASCADE)
+    plant_id = models.ForeignKey(Plant, verbose_name=_("Plants"), on_delete=models.CASCADE)
+    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nurseryes"), on_delete=models.CASCADE)
     
 
     class Meta:
