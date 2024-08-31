@@ -3,7 +3,7 @@ from .views import SocialNetworkModelViewSet, AboutusModelViewSet
 
 router = DefaultRouter()
 
-router.register(r'social-network', SocialNetworkModelViewSet)
-router.register(r'about-us', AboutusModelViewSet)
+router.register(r'nursery/(?P<nursery_name>[^/]+)/social-network', SocialNetworkModelViewSet)
+router.register(r'nursery/(?P<nursery_name>[^/]+)/about-us', AboutusModelViewSet)
 
 urlpatterns = router.urls

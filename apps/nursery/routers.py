@@ -3,7 +3,7 @@ from .views import NurseryModelViewSet
 
 router = DefaultRouter()
 
-router.register(r'', NurseryModelViewSet)
+router.register(r'nursery', NurseryModelViewSet)
 
 
 urlpatterns = router.urls

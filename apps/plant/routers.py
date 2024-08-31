@@ -3,7 +3,7 @@ from .views import PlantModelViewSet, InventoryModelViewSet
 
 router = DefaultRouter()
 
-router.register(r'plant', PlantModelViewSet)
-router.register(r'inventory', InventoryModelViewSet)
+router.register(r'nursery/(?P<nursery_name>[^/]+)/plant', PlantModelViewSet)
+router.register(r'nursery/(?P<nursery_name>[^/]+)/inventory', InventoryModelViewSet)
 
 urlpatterns = router.urls

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Nursery(models.Model):
     name = models.CharField(_("Nursery Name"), max_length=50)
-    user_id = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
     
 
     class Meta:

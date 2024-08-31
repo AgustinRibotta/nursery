@@ -8,7 +8,7 @@ class Plant(models.Model):
     name = models.CharField(_("Name"), max_length=150)
     description = models.TextField(_("Description"))
     img = models.ImageField(_("Image"), upload_to="plants/", height_field=None, width_field=None, max_length=None)
-    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE)    
+    nursery = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE)    
 
     class Meta:
         verbose_name = _("Plant")
@@ -23,6 +23,7 @@ class Inventory(models.Model):
     stock = models.PositiveIntegerField(_("Stock"))
     price = models.DecimalField(_("Price"), max_digits=5, decimal_places=2)
     plant_id = models.OneToOneField(Plant, verbose_name=_("Plants"), on_delete=models.CASCADE, related_name='inventories')
+    nursery = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE)    
 
 
     class Meta:

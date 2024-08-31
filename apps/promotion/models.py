@@ -14,7 +14,7 @@ class Event(models.Model):
     active = models.BooleanField(_("Active"), default=False)
     plant_id = models.ForeignKey(Plant, verbose_name=_("Plant"), on_delete=models.CASCADE, blank=True, null=True)
     category_plant_id = models.ForeignKey(CategoryPlant, verbose_name=_("CategoryPlant"), on_delete=models.CASCADE, blank=True, null=True)
-    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
+    nursery = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = _("Event")
@@ -30,7 +30,7 @@ class HigtLight(models.Model):
     active = models.BooleanField(_("Active"), default=False)
     plant_id = models.ForeignKey(Plant, verbose_name=_("Plant"), on_delete=models.CASCADE, blank=True, null=True)
     category_plant_id = models.ForeignKey(CategoryPlant, verbose_name=_("CategoryPlant"), on_delete=models.CASCADE, blank=True, null=True)
-    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
+    nursery = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = _("HigtLight")
@@ -48,7 +48,7 @@ class Offer(models.Model):
     End_date = models.DateTimeField(_("End"), auto_now=False, auto_now_add=False)
     plant_id = models.ForeignKey(Plant, verbose_name=_("Plant"), on_delete=models.CASCADE, blank=True, null=True)
     category_plant_id = models.ForeignKey(CategoryPlant, verbose_name=_("CategoryPlant"), on_delete=models.CASCADE, blank=True, null=True)
-    nursery_id = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
+    nursery = models.ForeignKey(Nursery, verbose_name=_("Nursery"), on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = _("Offer")
